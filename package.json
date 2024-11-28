@@ -1,0 +1,17 @@
+{
+  "name": "@hgun77/troubleshoot",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "e": "nodemon src/script/experiments/index.js"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "lodash": "^4.17.21",
+    "luxon": "^3.5.0",
+    "puppeteer": "^23.9.0"
+  },
+  "devDependencies": {}
+}
