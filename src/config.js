@@ -1,5 +1,10 @@
 export const user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
 
+export const proxy = {
+  host: 'http://gw.dataimpulse.com:10000',
+  auth: '5341a91c1c294119196f__cr.my;state.kualalumpur;asn.4788:a8730600c03491fe',
+};
+
 export const headless = false; // 'new'
 export const args = [
   `--user-agent="${user_agent}"`,

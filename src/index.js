@@ -9,9 +9,20 @@ async function main() {
 
   // console.log(`🔆 puppeteer.option:`, config.option);
 
+  if (config.proxy.host) {
+    console.log(`😎 PROXY LOGIN detected:`, config.proxy.host);
+    config.option.args.push(`--proxy-server=${config.proxy.host}`);
+  }
+
   const browser = await puppeteer.launch(config.option);
   const pages = await browser.pages();
   const page = pages.shift();
+
+  if (config.proxy.auth) {
+    const [username, password] = config.proxy.auth.split(':');
+    await page.authenticate({ username, password });
+    console.log(`😎 PROXY LOGIN authenticated:`, config.proxy.login, { username, password });
+  }
 
   page.on('response', async (response) => {
     if (response.status() !== 200) { return; }
